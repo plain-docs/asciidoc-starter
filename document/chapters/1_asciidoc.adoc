@@ -1,0 +1,26 @@
+= About AsciiDoc
+
+AsciiDoc is a superset of Markdown with some modifications.
+Like markdown, documents are written in plain text (extension .adoc) and rendered to an output format (html, pdf, docx, etc.), if needed.
+Having the source in plain text allows easy version control (git) of AsciiDoc documents.
+Plain text also allows choosing your favorite text editor. 
+
+AsciiDoc is intentionally as simple as possible to enable quick learning and to allow focus on writing.
+You can try it https://asciidoclive.com/[live in your browser].
+It has been developed for publishing all kinds of content to the web, to books, to manuals, and more.
+See an example document in https://asciidoctor.org/docs/asciidoc-article/[plain] and https://github.com/asciidoctor/asciidoctor.org/blob/master/docs/_includes/asciidoc-article-template.adoc[rendered] format, respectively.
+
+There is a wide variety of AsciiDoc projects and widespread support for the AsciiDoc format.
+Prominent examples include 
+
+* O'Reilly books  
+* The git book (HTML and printed)  
+* Khronos documentation  
+* GitHub and GitLab 
+
+AsciiDoc and git are open source, therefore they make MPEG independent of a company’s rule. 
+
+AsciiDoc supports automatic conversion to html, pdf, docx (Word), and other formats.
+Conversion can be done with one command.
+Html and pdf are the main target formats, they support perfect conversion.
+Conversion to Word is not perfect, but good: general style, sections, images, math, references are all correct.

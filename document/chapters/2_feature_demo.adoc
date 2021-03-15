@@ -1,0 +1,125 @@
+ifndef::imagesdir[:imagesdir: ../images]
+:sectnums:
+// Gitlab rendering seems to only support latexmath
+:stem: latexmath 
+:toc:
+:xrefstyle: short
+
+= AsciiDoc Demo
+
+== Text highlighting
+
+*bold* and _italic_ work as expected and *_can be combined_*. 
+
+[source, python]
+----
+# Comment
+for i in range(10):
+    print(f"helo, {i}")
+----
+
+inline source code `print("stuff")` is like this.
+
+Testing console highlighting
+
+[source, console]
+----
+# Comment
+cp -r file.txt
+find -name "*.txt" | xargs echo
+----
+
+c++ code highlighting test
+
+[source, cpp]
+----
+// Comment
+int i{0};
+if(element == 0){
+    return 0;
+}
+----
+
+testing note taking:
+
+[NOTE]
+====
+this is a note
+====
+
+Testing super^script^, works as well as sub~script~.
+
+// This is a comment, not rendered
+
+== References
+
+References to <<sec-text-replacements>>, <<myImage>>, and <<myTable>>.
+
+== Image
+
+.My image caption
+[#myImage]
+image::drawing.svg[]
+
+== Lists
+
+And here comes an unnumbered list:
+
+* one item
+* another item
+* yet another one
+** nested item with numbered items
+. asdf
+. aser
+.. bla
+
+Enumerated lists can of course stand alone:
+
+. asr
+. awer
+
+=== Links
+
+https://asciidoctor.org - automatic!
+
+https://asciidoctor.org[Asciidoctor]
+
+Embedding a YouTube-Video:
+
+video::4LOB3WeOUJk[youtube, width=640, height=360]
+
+=== Table Test
+
+Note that you can link:https://asciidoctor.org/docs/user-manual/#cell[easily] do multi-row and multi-column cells
+
+.CTC Sequences
+[#myTable]
+|===
+|Usage |ID |Name
+.3+|Mandatory |CG-A |ClassroomVideo
+| CG-B |Museum
+| CG-O |Fan
+|===
+
+
+[#sec-text-replacements]
+=== Text replacements
+
+(C) Creators
+
+Do first thing -> then do second thing
+
+=== Math
+
+See https://asciidoctor.org/docs/user-manual/#mathematical-expressions.
+You need to set `:stem:` in the document's header to activate this.
+This is rendered correctly everywhere, except by GitHub's HTML preview.
+stem:[\sqrt{4} = 2], another trye is stem:[H_2O].
+A matrix can be written as stem:[\begin{bmatrix} 1 & 2 & 3\\ a & b & c \end{bmatrix}].
+
+Block stem:
+
+[stem]
+++++
+\sqrt{2} = 5
+++++

@@ -1,0 +1,37 @@
+stages:
+  - build
+  - deploy
+
+default:
+  interruptible: true
+
+AsciiDoc:
+  stage: build
+  image: asciidoctor/docker-asciidoctor:latest
+  script:
+    - cd document
+    - make html
+    - make pdf
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - document/**/*
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - document/output
+
+pages:
+  stage: deploy
+  dependencies:
+    - AsciiDoc
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  script:
+    - mkdir -p public
+    - mv document/output public
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - public

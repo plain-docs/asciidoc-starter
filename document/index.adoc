@@ -1,0 +1,18 @@
+:imagesdir: images
+:sectnums:
+// Gitlab rendering supports only latexmath
+:stem: latexmath
+:toc:
+:xrefstyle: short
+
+= AsciiDoc Sample Document
+
+:leveloffset: +1
+
+include::chapters/1_asciidoc.adoc[]
+
+include::chapters/2_feature_demo.adoc[]
+
+include::chapters/3_alternatives.adoc[]
+
+:leveloffset: -1

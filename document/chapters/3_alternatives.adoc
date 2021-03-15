@@ -1,0 +1,77 @@
+= Alternatives to AsciiDoc 
+
+AsciiDoc has been deemed the best option out of a pool of candidates.
+The most promising alternatives are presented in this section. 
+
+== Microsoft Word Online 
+
+Switching from shared .zip files to shared documents on OneDrive or Sharepoint would already significantly improve collaboration and solve some inefficiency.
+The group has worked with word, so this wouldn’t require learning new tools.
+However, collaborators from some of Microsoft’s competitors, such as Apple, are not allowed to use Word Online.
+This alone prevents usage of Word Online.
+In addition, we found significant drawbacks when evaluating word online for collaborating on standards, described in this section.  
+
+Editing a document in Word online and simultaneously in Word desktop immediately causes the versions to get out of sync and merge conflicts arise.
+The fundamental problem is the discrepancy between Word online and the Word desktop application: Word online offers better collaboration support, with simultaneous edits and live synchronization from many people.
+Word desktop lacks this interactivity but offers many more editing features and a better version comparison view. 
+
+When editing a document in Word online, the program decides when to save the document.
+This does not give meaningful versions.
+Word online offers document versioning, but no version control.
+This has severe consequences: the document version history does not enable the user to search for meaningful commit messages, meetings, or discussions relating to a proposal.
+These searches are currently enabled by manual file versioning but will disappear when using one online file.
+There is also no straightforward way for determining who authored a section or paragraph, or to get the change history of a section. 
+
+From a technical perspective, setting up Word Online is not trivial: the documents may not be publicly accessible, so every collaborator needs a Microsoft account.
+In general, this would add yet another platform to the already fragmented MPEG infrastructure.
+Reusing GitLab would avoid this. 
+
+On a related subject, Word Online lacks integration into MPEG’s existing GitLab infrastructure Thus, no straightforward linking to issues, comments, or meetings is possible. 
+
+In contrast to plain text alternatives, Word Online doesn’t solve formatting issues: content is not separated from style, so pasting something in the wrong format into the document is possible.
+This is not an issue for the plain text AsciiDoc, where styling is applied when converting to the output format. 
+
+In general, given that Word is proprietary software and Word files are written in a proprietary format, it lacks openness and interactivity.
+There is no straightforward or automated way of publishing Word documents to HTML or to the web.
+Providing easy access to output documents is extremely important today and will gain more importance as the world gets ever more connected through the web.
+Additionally, AsciiDoc output documents allow to link directly to sections within a document, which simplifies sharing and collaborating.
+This is not possible with Word.
+Looking into more advanced usage, plain text tools such as AsciiDoc enable us to apply tools such as automatically verifying implementations against documents, which is once more not possible with Word.
+We will continue discovering new usages of plain text documents once we switch to them.
+Openness and interactivity with other tools are key for a future proof and professional way of working.
+However, these are not given or impeded by Word. 
+
+Finally, having multiple simultaneous proposals in a shared Word online document lacks separation and causes discussions to interfere.
+When searching the history of a document, this also makes it difficult isolate a discussion relating to a specific proposal. 
+
+In general, transitioning to Word Online would be a conservative choice considering the past.
+It doesn’t tackle many of the current issues and introduces additional ones.
+AsciiDoc is a forward-looking choice that resolves many problems and prepares MPEG for the future. 
+
+== reStructuredText 
+
+The syntax concept of reStructuredText (reST) is similar to AsciiDoc’s.
+However, some of AsciiDoc’s syntax design decisions are more reasonable than reST’s.
+AsciiDoc is clearly influenced by modern syntax such as Markdown.
+Two examples for saner syntax are headings and tables.
+Heading level n is set by prefixing the equals sign in AsciiDoc n times.
+reST requires to underline headings with characters from a special set, and heading level is determined by the succession of underlinings.
+Tables in AsciiDoc are simpler to write as well as more powerful compared to reST. 
+
+AsciiDoc has also better toolchain support.
+With AsciiDoc, the conversion and preview tools come from one project and are well synchronized and working.
+To get the reST toolchain to work, lots of manual configuration was required.
+reST documents are rendered by GitLab, but not their math equations. 
+
+== Markdown 
+
+Markdown is extremely widespread and simple to use.
+However, its features are lacking essential layout requirements from our group.
+For instance, Markdown does not support math, image captions, image references, merged cells in tables.
+These things can only be done by injecting HTML into Markdown.
+HTML, however, is much too complex for daily use by editors. 
+
+== Others 
+
+LaTeX, HTML, and Org-mode require too much boilerplate code to write and are difficult to learn.
+Wacko wiki markup has insufficient functionality. 

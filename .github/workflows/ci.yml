@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  AsciiDoc:
+    runs-on: ubuntu-latest
+    container: asciidoctor/docker-asciidoctor:latest
+    steps:
+      - name: Install rsync
+        run: apk add rsync
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          cd document
+          make html
+          make pdf
+      - name: Prepare Deploy
+        if: github.ref == 'refs/heads/master'
+        run: echo "# This branch is for deployment only" >> document/output/README.md
+      - name: Deploy
+        if: github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages
+          folder: document/output
+          single-commit: true
+          silent: true
