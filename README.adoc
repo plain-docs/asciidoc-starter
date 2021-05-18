@@ -4,9 +4,9 @@ image:https://github.com/plain-docs/asciidoc-starter/actions/workflows/ci.yml/ba
 
 This is a template AsciiDoc project, providing
 
-- examples of the most widely used AsciiDoc features such as code blocks, references, images, videos, and math
-- a scaleable document structure with sub-folders and files
-- docker-compose and Makefiles that allow you to build your document by calling `make docs` from the root of this repository.
+- Examples of the most widely used AsciiDoc features such as code blocks, references, images, videos, and math
+- A scaleable document structure with sub-folders and files
+- Docker-compose and Makefiles that allow you to build your document by calling `make docs` from the root of this repository.
 - Continuous integration for GitHub and GitLab, continuously building HTML and PDF output documents from the root AsciiDoc file link:/document/index.adoc[document/index.adoc].
 
 You can view the HTML https://plain-docs.github.io/asciidoc-starter/[here] and
