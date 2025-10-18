@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Install rsync
         run: apk add rsync
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - name: Build
         run: |
           cd document
@@ -24,7 +24,7 @@ jobs:
         run: echo "# This branch is for deployment only" >> document/output/README.md
       - name: Deploy
         if: github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@4
         with:
           branch: gh-pages
           folder: document/output
