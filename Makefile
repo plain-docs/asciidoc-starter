@@ -1,7 +1,7 @@
 html:
-	docker-compose run html
+	docker compose run html
 
 pdf:
-	docker-compose run pdf
+	docker compose run pdf
 
 docs: html pdf
